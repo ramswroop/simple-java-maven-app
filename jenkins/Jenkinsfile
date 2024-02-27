@@ -47,5 +47,14 @@ pipeline {
                 sh './jenkins/scripts/deliver.sh'
             }
         }
+		
+		stage('archive the jars files') {
+		            when {
+                expression { params.RUN_TESTS == true }
+            }
+            steps {
+               archiveArtifacts 'target/*.jar'
+            }
+        }
     }
 }
