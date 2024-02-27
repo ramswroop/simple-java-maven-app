@@ -1,11 +1,12 @@
 pipeline {
-    agent {
+	agent any
+   /* agent {
        // docker {
         //    image 'maven:3.9.0'
         //    args '-v /root/.m2:/root/.m2'
-	    label any
+	//    label any
         //}
-    }
+    } */
 	parameters {
         choice(name: 'ENVIRONMENT', choices: ['dev', 'qa', 'prod'], description: 'Select deployment environment')
         booleanParam(name: 'RUN_TESTS', defaultValue: true, description: 'Run tests?')
