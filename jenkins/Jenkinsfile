@@ -10,11 +10,12 @@ pipeline {
 	parameters {
         choice(name: 'ENVIRONMENT', choices: ['dev', 'qa', 'prod'], description: 'Select deployment environment')
         booleanParam(name: 'RUN_TESTS', defaultValue: true, description: 'Run tests?')
+	choice(name: 'Build', choices: ['dev', 'qa', 'prod'], description: 'only for the where caluse is testing')
     }
     stages {
         stage('Build') {
 		       when {
-                expression { params.RUN_TESTS == true }
+                expression { params.Build == dev }
             }
             steps {
                 sh 'mvn -B -DskipTests clean package'
