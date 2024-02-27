@@ -1,5 +1,8 @@
 pipeline {
 	agent any
+    tools {
+        maven 'maven_3.9.6_kavita' // 'Maven' is the name of the Maven installation configured in Jenkins
+    }
    /* agent {
        // docker {
         //    image 'maven:3.9.0'
