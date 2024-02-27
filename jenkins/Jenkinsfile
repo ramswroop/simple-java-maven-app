@@ -15,9 +15,10 @@ pipeline {
     stages {
         stage('Build') {
 		       when {
-                expression { params.Build == dev }
+                expression { params.Build == "dev" }
             }
             steps {
+		sh 'echo "Hi kavita this side Ramswroop"'
                 sh 'mvn -B -DskipTests clean package'
             }
         }
