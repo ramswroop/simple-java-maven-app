@@ -63,10 +63,14 @@ pipeline {
             
                parallel{
                 stage("kavita"){
+                 steps{
                     sh ' echo "taksh went to school"'
+                 }
                 }
                 stage("rama"){
+                    steps{
                     sh 'echo "taksh will come home around 2 pm"'
+                    }
                 }
                }
             
