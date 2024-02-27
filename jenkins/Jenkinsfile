@@ -60,7 +60,7 @@ pipeline {
 		            when {
                 expression { params.RUN_TESTS == true }
             }
-            steps {
+            
                parallel{
                 stage("kavita"){
                     sh ' echo "taksh went to school"'
@@ -69,7 +69,7 @@ pipeline {
                     sh 'echo "taksh will come home around 2 pm"'
                 }
                }
-            }
+            
         }
 
 
